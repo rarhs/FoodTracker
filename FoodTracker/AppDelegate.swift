@@ -8,10 +8,19 @@
 
 import UIKit
 
+// Reza: UIApplicationMain creates an application object that's responsible for managing the life -
+// of the app.
 @UIApplicationMain
+// Reza: AppDelegate is the blue print for the app delegate object -
+// Creates a window where the app's content is drawn -
+// provides a place to respond to state transitions within the app
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+    // Reza: With the window property the app delegate keeps track of the window -
+    // in which all of your app content is drawn.
     var window: UIWindow?
+    
+    // Reza: Below are the predefined methods that allow the application object -
+    // to talk to the app delegate.
     
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
