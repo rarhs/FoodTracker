@@ -12,6 +12,9 @@ class MealViewController: UIViewController, UITextFieldDelegate,
   UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: Properties
+    // Reza: Define a implicitly unwrapped optioal property of type UITextField named nameTextField
+    // which can have no value(be nil) at some point in it's life
+    // and connect the property to the interface builder.
     @IBOutlet weak var nameTextField: UITextField!
     // An image view object provides a view-based container for displaying either a single image or for
     // animating a series of images.
