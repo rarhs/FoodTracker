@@ -145,6 +145,7 @@ class MealViewController: UIViewController, UITextFieldDelegate,
         let imagePickerController = UIImagePickerController()
         
         // Only allow photos to be picked, not taken.
+        // you can use the abbreviated form anytime the enumeration value's type is already known.
         imagePickerController.sourceType = .PhotoLibrary
         
         // Make sure ViewController is notified when the user picks an image.
