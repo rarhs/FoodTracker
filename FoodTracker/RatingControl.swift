@@ -12,6 +12,8 @@ class RatingControl: UIView {
     // MARK: Properties
     
     var rating = 0 {
+        // didSet property observer ensures that the UI is always showing an accurate representation of the
+        // rating property value
         didSet {
             setNeedsLayout()
         }
@@ -28,6 +30,7 @@ class RatingControl: UIView {
         let filledStarImage = UIImage(named: "filledStar")
         let emptyStarImage = UIImage(named: "emptyStar")
         
+        // The half-open range operator doesn't include the upper number
         for _ in 0..<5 {
             let button = UIButton()
             
@@ -37,6 +40,7 @@ class RatingControl: UIView {
             
             button.adjustsImageWhenHighlighted = false
             
+            // Attaching ratingButtonTapped action to the button object whenever .TouchDown event occurs
             button.addTarget(self, action: "ratingButtonTapped:", forControlEvents: .TouchDown)
             ratingButtons += [button]
             addSubview(button)
@@ -66,6 +70,9 @@ class RatingControl: UIView {
     // MARK: Button Action
     
     func ratingButtonTapped(button: UIButton) {
+        // find the index of the selected button in the array of buttons
+        // because array starts with 0, add 1 to the selected button
+        // indexOf returns an option, therefore, you use force unwrap operator(!)
         rating = ratingButtons.indexOf(button)! + 1
         
         updateButtonSelectionStates()
